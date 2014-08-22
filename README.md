@@ -4,4 +4,6 @@ This game was created with the tutorial from: http://www.informit.com/library/co
 
 The poker chips are from: ttp://assets.nerdwallet.com/blog/investing/files/2012/10/PokerChips.jpeg
 
-The function Deal, in JavaScript, was attempted to be edited to allow for a more precise "random." This didn't work out as planned. 
+The deal function was changed to a Fisher Yates shuffle function. Help with this was supplied from a wonderful lecture from Brook Riggio and also, http://bost.ocks.org/mike/shuffle/.
+
+
