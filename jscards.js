@@ -7,6 +7,19 @@ function DealDraw() {
    if (dealt == true) Draw();
    else Deal();
 }
+
+function fishuffle(array) {
+  var m = array.length, t, i;
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+
 function Deal() {
    for (i=1; i<14; i++) {
      deck[i] = new Card(i,"c");
@@ -14,14 +27,10 @@ function Deal() {
      deck[i+26] = new Card(i,"s");
      deck[i+39] = new Card(i,"d");
    }
-   var n = Math.floor(400 * Math.random() + 500);
-   for (i=1; i<n; i++) {
-      card1 = Math.floor(52*Math.random() + 1);
-      card2 = Math.floor(52*Math.random() + 1);
-      temp = deck[card2];
-      deck[card2] = deck[card1];
-      deck[card1] = temp;
-   }
+   
+   deck = fishuffle (deck);
+//changed to Fisher Yates shuffle! 
+   
    for (i=1; i<6; i++) {
       hand[i] = deck[i];
       document.images[i].src = hand[i].fname();
